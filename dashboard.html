@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Avaliador Escolar — Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar" aria-label="Navegação">
+        <div class="brand">
+          <div class="logo">AE</div>
+          <div>
+            <h1>Avaliador Escolar</h1>
+            <div class="small-muted">Dashboard</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="index.html"
+            ><span class="material-icons">login</span>Login</a
+          >
+          <a href="register.html"
+            ><span class="material-icons">person_add</span>Cadastro</a
+          >
+          <a class="active" href="dashboard.html"
+            ><span class="material-icons">dashboard</span>Dashboard</a
+          >
+          <a href="avaliacoes.html"
+            ><span class="material-icons">assignment</span>Avaliações</a
+          >
+          <a href="turmas.html"
+            ><span class="material-icons">group</span>Turmas</a
+          >
+          <a href="relatorios.html"
+            ><span class="material-icons">bar_chart</span>Relatórios</a
+          >
+          <a href="calendario.html"
+            ><span class="material-icons">calendar_today</span>Calendário</a
+          >
+        </nav>
+        <hr />
+        <div style="margin-top: 8px">
+          <div class="small-muted">Perfil</div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              align-items: center;
+              margin-top: 8px;
+            "
+          >
+            <img
+              src="https://via.placeholder.com/44"
+              alt="avatar"
+              style="border-radius: 10px"
+            />
+            <div>
+              <div style="font-weight: 700">Maria Silva</div>
+              <div class="small-muted" style="font-size: 13px">
+                Professor • Matemática
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <div>
+            <h2 class="h2">Painel — Professor</h2>
+            <div class="p-muted">
+              Visão geral das turmas, avaliações e notificações.
+            </div>
+          </div>
+
+          <div class="header-right">
+            <div class="search card">
+              <span class="material-icons" aria-hidden="true">search</span>
+              <input
+                placeholder="Pesquisar aluno, atividade..."
+                aria-label="Pesquisar"
+              />
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center">
+              <button class="btn">Novo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3 class="h2">Alunos</h3>
+            <div class="metric">120</div>
+            <div class="small">Total de alunos matriculados</div>
+          </div>
+          <div class="card">
+            <h3 class="h2">Avaliações ativas</h3>
+            <div class="metric">8</div>
+            <div class="small">Provas / trabalhos pendentes</div>
+          </div>
+          <div class="card">
+            <h3 class="h2">Turmas</h3>
+            <div class="metric">6</div>
+            <div class="small">Turmas sob sua responsabilidade</div>
+          </div>
+        </div>
+
+        <div class="columns" style="margin-top: 12px">
+          <section class="card">
+            <h3 class="h2">Últimas avaliações</h3>
+            <table class="table" aria-label="Últimas avaliações">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Turma</th>
+                  <th>Entrega</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Prova Cap.1-3</td>
+                  <td>9ºA</td>
+                  <td>2025-10-28</td>
+                  <td><span class="tag info">Aberta</span></td>
+                </tr>
+                <tr>
+                  <td>Trabalho: Geometria</td>
+                  <td>8ºB</td>
+                  <td>2025-11-03</td>
+                  <td><span class="tag warn">Em revisão</span></td>
+                </tr>
+                <tr>
+                  <td>Quiz Álgebra</td>
+                  <td>9ºA</td>
+                  <td>2025-10-31</td>
+                  <td><span class="tag danger">Pendente</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <aside class="card">
+            <h3 class="h2">Calendário (próximos)</h3>
+            <div class="calendar" aria-hidden="true" style="margin-top: 8px">
+              <div class="day">
+                Seg<br /><strong>27</strong>
+                <div class="small-muted">Reunião</div>
+              </div>
+              <div class="day today">
+                Ter<br /><strong>28</strong>
+                <div class="small-muted">Prova 9ºA</div>
+              </div>
+              <div class="day">
+                Qua<br /><strong>29</strong>
+                <div class="small-muted">Entrega</div>
+              </div>
+              <div class="day">Qui<br /><strong>30</strong></div>
+              <div class="day">Sex<br /><strong>31</strong></div>
+              <div class="day">Sáb<br /><strong>01</strong></div>
+              <div class="day">Dom<br /><strong>02</strong></div>
+            </div>
+
+            <div style="margin-top: 12px">
+              <h4 style="margin: 0">Notificações</h4>
+              <div class="small-muted" style="margin-top: 6px">
+                Nenhuma nova notificação.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

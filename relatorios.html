@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Relatórios — Avaliador Escolar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">AE</div>
+          <div>
+            <h1>Avaliador Escolar</h1>
+            <div class="small-muted">Relatórios</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="avaliacoes.html">Avaliações</a>
+          <a href="relatorios.html" class="active">Relatórios</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <div>
+            <h2 class="h2">Relatórios</h2>
+            <div class="p-muted">Exportar, filtrar e analisar desempenho</div>
+          </div>
+          <div class="header-right">
+            <button class="btn">Exportar PDF</button>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3 class="h2">Média por aluno</h3>
+            <div style="height: 200px" class="center">
+              <!-- Placeholder gráfico -->
+              <svg
+                width="90%"
+                height="160"
+                viewBox="0 0 600 160"
+                aria-hidden="true"
+              >
+                <rect width="100%" height="100%" rx="8" fill="#fff"></rect>
+                <g fill="#cbd5e1">
+                  <rect x="40" y="40" width="40" height="80" rx="6"></rect>
+                  <rect x="120" y="20" width="40" height="100" rx="6"></rect>
+                  <rect x="200" y="60" width="40" height="60" rx="6"></rect>
+                  <rect x="280" y="10" width="40" height="110" rx="6"></rect>
+                  <rect x="360" y="75" width="40" height="45" rx="6"></rect>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="h2">Desempenho por turma</h3>
+            <div style="height: 200px" class="center small-muted">
+              Gráfico de barras / linhas (placeholder)
+            </div>
+          </div>
+
+          <div class="card" style="grid-column: 1/-1">
+            <h3 class="h2">Exportar relatórios</h3>
+            <p class="p-muted">Escolha filtros e exporte para PDF ou CSV</p>
+            <form
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                margin-top: 8px;
+              "
+            >
+              <select class="select">
+                <option>Periodo: Último mês</option>
+                <option>Último trimestre</option>
+              </select>
+              <select class="select">
+                <option>Tipo: Média por aluno</option>
+                <option>Tipo: Turma</option>
+              </select>
+              <button class="btn">Gerar</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

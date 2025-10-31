@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Calendário — Avaliador Escolar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">AE</div>
+          <div>
+            <h1>Avaliador Escolar</h1>
+            <div class="small-muted">Calendário</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a
+          ><a href="calendario.html" class="active">Calendário</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <div>
+            <h2 class="h2">Calendário Escolar — Outubro 2025</h2>
+            <div class="p-muted">Eventos, prazos e feriados</div>
+          </div>
+          <div class="header-right">
+            <button class="btn">Adicionar evento</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 12px;
+            "
+          >
+            <div><strong>Outubro 2025</strong></div>
+            <div class="small-muted">Segunda-feira começa a semana</div>
+          </div>
+
+          <div
+            class="calendar"
+            role="grid"
+            aria-label="Calendário de Outubro 2025"
+          >
+            <!-- Linha de cabeçalho -->
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Seg
+            </div>
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Ter
+            </div>
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Qua
+            </div>
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Qui
+            </div>
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Sex
+            </div>
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Sáb
+            </div>
+            <div
+              class="day"
+              style="background: transparent; border: 0; font-weight: 700"
+            >
+              Dom
+            </div>
+
+            <!-- Exemplos de dias (simplificado) -->
+            <div class="day"></div>
+            <!-- espaço inicial -->
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day">
+              01<br />
+              <div class="small-muted">Início do bimestre</div>
+            </div>
+            <div class="day">02</div>
+            <div class="day">03</div>
+            <div class="day">04</div>
+
+            <!-- mais dias -->
+            <div class="day">05</div>
+            <div class="day today">
+              06<br />
+              <div class="small-muted">Prova 9ºA</div>
+            </div>
+            <div class="day">07</div>
+            <div class="day">08</div>
+            <div class="day">09</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+
+            <!-- continue conforme necessário -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

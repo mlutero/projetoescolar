@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Perfil — Avaliador Escolar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">AE</div>
+          <div>
+            <h1>Avaliador Escolar</h1>
+            <div class="small-muted">Perfil</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a
+          ><a href="perfil.html" class="active">Perfil</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <div>
+            <h2 class="h2">Meu Perfil</h2>
+            <div class="p-muted">Edite suas informações</div>
+          </div>
+          <div class="header-right"></div>
+        </div>
+
+        <div
+          class="card"
+          style="display: flex; gap: 18px; align-items: flex-start"
+        >
+          <div style="width: 140px; text-align: center">
+            <img
+              src="https://via.placeholder.com/120"
+              alt="Foto do usuário"
+              style="width: 120px; border-radius: 10px"
+            />
+            <div style="margin-top: 8px">
+              <button class="secondary btn">Alterar foto</button>
+            </div>
+          </div>
+
+          <div style="flex: 1">
+            <form>
+              <div class="form-row">
+                <input
+                  class="input"
+                  placeholder="Nome completo"
+                  value="Maria Silva"
+                />
+                <input
+                  class="input"
+                  placeholder="E-mail"
+                  value="maria@escola.local"
+                />
+              </div>
+              <div class="form-row">
+                <select class="select">
+                  <option>Professor</option>
+                  <option>Aluno</option>
+                  <option>Administrador</option>
+                </select>
+                <input class="input" placeholder="Turma" value="9ºA" />
+              </div>
+              <div class="form-row">
+                <input class="input" placeholder="Telefone" />
+                <input class="input" placeholder="Contato alternativo" />
+              </div>
+              <div style="display: flex; gap: 8px; margin-top: 8px">
+                <button class="btn" type="submit">Salvar alterações</button>
+                <button class="secondary btn" type="button">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

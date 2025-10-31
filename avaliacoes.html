@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Avaliações — Avaliador Escolar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar" aria-label="menu">
+        <div class="brand">
+          <div class="logo">AE</div>
+          <div>
+            <h1>Avaliador Escolar</h1>
+            <div class="small-muted">Avaliações</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html"
+            ><span class="material-icons">dashboard</span>Dashboard</a
+          >
+          <a class="active" href="avaliacoes.html"
+            ><span class="material-icons">assignment</span>Avaliações</a
+          >
+          <a href="turmas.html"
+            ><span class="material-icons">group</span>Turmas</a
+          >
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <div>
+            <h2 class="h2">Avaliações</h2>
+            <div class="p-muted">Visualize e crie avaliações</div>
+          </div>
+          <div class="header-right">
+            <a href="#criar" class="btn">Nova avaliação</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="h2">Filtros</h3>
+          <form
+            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px"
+          >
+            <input class="input" placeholder="Pesquisar por título ou turma" />
+            <select class="select">
+              <option>Todas as turmas</option>
+              <option>9ºA</option>
+              <option>8ºB</option>
+            </select>
+            <select class="select">
+              <option>Qualquer status</option>
+              <option>Aberta</option>
+              <option>Fechada</option>
+            </select>
+            <button class="btn" type="button">Aplicar</button>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top: 12px">
+          <h3 class="h2">Lista de Avaliações</h3>
+          <table class="table" aria-label="Lista de avaliações">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Turma</th>
+                <th>Data</th>
+                <th>Peso</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Prova Cap.1-3</td>
+                <td>9ºA</td>
+                <td>28/10/2025</td>
+                <td>2.0</td>
+                <td><a class="tag info" href="#">Editar</a></td>
+              </tr>
+              <tr>
+                <td>Trabalho: Geometria</td>
+                <td>8ºB</td>
+                <td>03/11/2025</td>
+                <td>1.5</td>
+                <td><a class="tag" href="#">Visualizar</a></td>
+              </tr>
+              <tr>
+                <td>Quiz Álgebra</td>
+                <td>9ºA</td>
+                <td>31/10/2025</td>
+                <td>0.5</td>
+                <td><a class="tag danger" href="#">Remover</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="criar" class="card" style="margin-top: 12px">
+          <h3 class="h2">Criar nova avaliação</h3>
+          <form>
+            <div class="form-row">
+              <input class="input" placeholder="Título da avaliação" required />
+              <select class="select" required>
+                <option>Selecionar turma</option>
+                <option>9ºA</option>
+                <option>8ºB</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <input
+                class="input"
+                type="date"
+                aria-label="Data de entrega"
+                required
+              />
+              <input class="input" placeholder="Peso (ex: 1.0)" required />
+            </div>
+            <div style="margin-bottom: 12px">
+              <textarea
+                class="input"
+                style="height: 100px"
+                placeholder="Instruções / observações"
+              ></textarea>
+            </div>
+            <div style="display: flex; gap: 8px">
+              <button class="btn" type="submit">Salvar avaliação</button>
+              <button class="secondary btn" type="button">
+                Salvar rascunho
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("#criar form");
+        const tabela = document.querySelector(".table tbody");
+
+        // === Função: adicionar avaliação ===
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const titulo = form.querySelector(
+            'input[placeholder="Título da avaliação"]'
+          ).value;
+          const turma = form.querySelector("select").value;
+          const data = form.querySelector('input[type="date"]').value;
+          const peso = form.querySelector(
+            'input[placeholder="Peso (ex: 1.0)"]'
+          ).value;
+
+          if (!titulo || !turma || !data || !peso) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+          }
+
+          const novaLinha = document.createElement("tr");
+          novaLinha.innerHTML = `
+        <td>${titulo}</td>
+        <td>${turma}</td>
+        <td>${data.split("-").reverse().join("/")}</td>
+        <td>${peso}</td>
+        <td>
+          <button class="btn-remover" style="background:#e53e3e;color:white;border:none;border-radius:8px;padding:6px 10px;cursor:pointer">
+            Remover
+          </button>
+        </td>
+      `;
+          tabela.appendChild(novaLinha);
+
+          salvarAvaliacoes(); // salva automaticamente
+          form.reset();
+          alert("✅ Avaliação criada com sucesso!");
+        });
+
+        // === Função: remover avaliação ===
+        tabela.addEventListener("click", (e) => {
+          if (e.target.classList.contains("btn-remover")) {
+            e.target.closest("tr").remove();
+            salvarAvaliacoes();
+            alert("🗑️ Avaliação removida!");
+          }
+        });
+
+        // === Funções: salvar e carregar avaliações (localStorage) ===
+        function salvarAvaliacoes() {
+          const linhas = tabela.querySelectorAll("tr");
+          const dados = Array.from(linhas).map((linha) => {
+            const c = linha.querySelectorAll("td");
+            return {
+              titulo: c[0]?.textContent,
+              turma: c[1]?.textContent,
+              data: c[2]?.textContent,
+              peso: c[3]?.textContent,
+            };
+          });
+          localStorage.setItem("avaliacoes", JSON.stringify(dados));
+        }
+
+        function carregarAvaliacoes() {
+          const dados = JSON.parse(localStorage.getItem("avaliacoes") || "[]");
+          dados.forEach((av) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+          <td>${av.titulo}</td>
+          <td>${av.turma}</td>
+          <td>${av.data}</td>
+          <td>${av.peso}</td>
+          <td>
+            <button class="btn-remover" style="background:#e53e3e;color:white;border:none;border-radius:8px;padding:6px 10px;cursor:pointer">
+              Remover
+            </button>
+          </td>
+        `;
+            tabela.appendChild(tr);
+          });
+        }
+
+        // Carrega ao abrir
+        carregarAvaliacoes();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Avaliador Escolar — Cadastro</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar" aria-hidden="true">
+        <div class="brand">
+          <div class="logo">AE</div>
+          <div>
+            <h1>Avaliador Escolar</h1>
+            <div class="small-muted">Cadastro</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="index.html"
+            ><span class="material-icons">login</span>Login</a
+          >
+          <a class="active" href="register.html"
+            ><span class="material-icons">person_add</span>Cadastro</a
+          >
+          <a href="dashboard.html"
+            ><span class="material-icons">dashboard</span>Dashboard</a
+          >
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <div>
+            <h2 class="h2">Criar nova conta</h2>
+            <div class="p-muted">
+              Escolha o tipo de perfil e preencha seus dados.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="max-width: 760px">
+          <form aria-label="Formulário de cadastro">
+            <div class="form-row">
+              <input
+                class="input"
+                placeholder="Nome completo"
+                aria-label="Nome completo"
+                required
+              />
+              <input
+                class="input"
+                placeholder="E-mail"
+                aria-label="E-mail"
+                type="email"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <select class="select" aria-label="Tipo de usuário">
+                <option>Aluno</option>
+                <option>Professor</option>
+                <option>Administrador</option>
+              </select>
+              <input
+                class="input"
+                placeholder="Turma (opcional)"
+                aria-label="Turma"
+              />
+            </div>
+
+            <div class="form-row">
+              <input
+                class="input"
+                placeholder="Senha"
+                type="password"
+                required
+              />
+              <input
+                class="input"
+                placeholder="Confirmar senha"
+                type="password"
+                required
+              />
+            </div>
+
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                margin-top: 8px;
+              "
+            >
+              <button class="btn" type="submit">Criar Conta</button>
+              <a class="secondary btn" href="index.html">Voltar ao login</a>
+            </div>
+          </form>
+        </div>
+
+        <div style="height: 18px"></div>
+
+        <div class="card">
+          <h3 class="h2">Notas sobre acessibilidade</h3>
+          <p class="p-muted">
+            Campos com `aria-label` e contraste pensado para legibilidade. Se
+            necessário, aumentamos tamanho de fonte e foco.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
